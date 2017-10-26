@@ -1,10 +1,13 @@
-import { StripeProvider, Elements, CardElement } from 'react-stripe-elements'
+import { StripeProvider, Elements } from 'react-stripe-elements'
+import Head from 'next/head'
+
+import CheckoutForm from '../components/CheckoutForm'
 
 export default () =>
 	<div>
-		<StripeProvider apiKey="pk_test">
-			<Elements>
-				<CardElement />
-			</Elements>
-		</StripeProvider>
+		<Head>
+			<script src="https://js.stripe.com/v3/" />
+		</Head>
+
+		<CheckoutForm />
 	</div>
